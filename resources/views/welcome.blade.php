@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="api,aeronaves,aeroportos,aplicativos">
+    <meta name="description" content="API.AERO é uma ferramenta destinada a facilitar a vida de quem está desenvolvendo aplicações
+    para o setor aéreo">
 
-    <title>{{ env('APP_NAME') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <x-favicons></x-favicons>
     <!-- Fonts -->

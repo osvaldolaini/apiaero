@@ -17,7 +17,9 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body>
+    <body class="antialiased relative h-screen overflow-hidden bg-black
+text-gray-100 bg-cover"
+    style="background-image: url({{ url('storage/logos/error-background-20-color.png') }});">
         <div class="font-sans text-gray-900 dark:text-gray-100 antialiased">
             {{ $slot }}
         </div>

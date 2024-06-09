@@ -9,6 +9,8 @@ class SideBar extends Component
 {
     public function render()
     {
-        return view('livewire.admin.side-bar');
+        return view('livewire.admin.side-bar',[
+            'user' =>Auth::user()->group,
+        ]);
     }
 }

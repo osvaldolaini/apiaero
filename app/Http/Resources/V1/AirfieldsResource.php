@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\V1;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -43,6 +44,7 @@ class AirfieldsResource extends JsonResource
             'ordinanceRegistration' => $this->ordinanceRegistration,
             'ordinanceLink'         => $this->ordinanceLink,
             'registrationValidity'  => $this->registrationValidity,
+            'updated_at'            => ($this->updated_at ? Carbon::parse( $this->updated_at)->format('d/m/Y') : null),
         ];
     }
 }

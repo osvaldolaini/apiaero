@@ -17,6 +17,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'version' => env('APP_VERSION', 'Laravel'),
+    'api_key' => env('AERO_TOKEN'),
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +98,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'pt_BR',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------

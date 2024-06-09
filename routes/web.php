@@ -1,7 +1,7 @@
 <?php
 
-use App\Livewire\Admin\Aircrafts;
-use App\Livewire\Admin\Airfields;
+use App\Livewire\Admin\Aircraft;
+use App\Livewire\Admin\Airfield;
 use App\Livewire\Admin\Dashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -24,10 +24,12 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
+    'adminAccess',
+    'registerLogging'
 ])->group(function () {
     Route::get('/dashboard',Dashboard::class)->name('dashboard');
-    Route::get('/painel-de-controle-administrador',Dashboard::class)->name('dashboard');
-    Route::get('/listar-aerodromos',Airfields::class)->name('airfields');
-    Route::get('/listar-aeronaves',Aircrafts::class)->name('aircrafts');
+    // Route::get('/painel-de-controle-administrador',Dashboard::class)->name('dashboard');
 });
+    Route::get('/listar-aerodromos',Airfield::class)->name('airfields');
+    Route::get('/listar-aeronaves',Aircraft::class)->name('aircrafts');
 

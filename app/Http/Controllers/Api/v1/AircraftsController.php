@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\AircraftsResource;
+use App\Models\Admin\Access;
 use App\Models\Aircrafts;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AircraftsController extends Controller
@@ -12,11 +14,20 @@ class AircraftsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request,)
     {
+        $token = $request->bearerToken();
+        $user = User::where('token',$token)->first();
+
+        Access::create([
+            'user_id'       => $user->id,
+            'token'         => $token,
+            'api'           => 'airfields',
+            'item'          => 'all',
+        ]);
         return [
             'lastUpdateData' => date("Y-m-d"),
-            'version' => env('APP_VERSION', 'V1'),
+            'version' => config('app.version', 'V1'),
             'data' => AircraftsResource::collection(Aircrafts::all())
         ];
     }
@@ -40,7 +51,7 @@ class AircraftsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($prefix)
+    public function show($prefix,Request $request)
     {
         // Validação do código OACI
         if (mb_strlen($prefix, 'UTF-8') != 5) {
@@ -52,6 +63,14 @@ class AircraftsController extends Controller
         $airfield = Aircrafts::where('prefix',$prefix)->get();
 
         if ($airfield->count() > 0) {
+            $token = $request->bearerToken();
+            $user = User::where('token',$token)->first();
+            Access::create([
+                'user_id'       => $user->id,
+                'token'         => $token,
+                'api'           => 'aircrafts',
+                'item'          => $prefix,
+            ]);
             return response()->json([
                 'message' => 'Sucesso',
                 'lastUpdateData' => date("Y-m-d"),

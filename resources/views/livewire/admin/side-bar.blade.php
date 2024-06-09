@@ -5,20 +5,22 @@
             <div class="h-full bg-white rounded-2xl dark:bg-gray-700 py-2">
                 <nav class="mt-3">
                     <div>
-                        {{-- <x-link-simple url="list-users" active="*usuários*">
-                            <span class="text-left">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M13 20V18C13 15.2386 10.7614 13 8 13C5.23858 13 3 15.2386 3 18V20H13ZM13 20H21V19C21 16.0545 18.7614 14 16 14C14.5867 14 13.3103 14.6255 12.4009 15.6311M11 7C11 8.65685 9.65685 10 8 10C6.34315 10 5 8.65685 5 7C5 5.34315 6.34315 4 8 4C9.65685 4 11 5.34315 11 7ZM18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9Z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                            <span class="mx-4 text-sm font-normal">
-                                Usuários
-                            </span>
-                        </x-link-simple> --}}
+                        @if ($user == 'admin')
+                            <x-link-simple url="dashboard" active="*painel*" >
+                                <span class="text-left">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 2048 1792"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1070 1178l306-564h-654l-306 564h654zm722-282q0 182-71 348t-191 286-286 191-348 71-348-71-286-191-191-286-71-348 71-348 191-286 286-191 348-71 348 71 286 191 191 286 71 348z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="mx-4 text-sm font-normal">
+                                    Dashboard
+                                </span>
+                            </x-link-simple>
+                            <Fieldset></Fieldset>
+                        @endif
                         <div class="flex mx-2 items-center pt-1 flex-nowrap border-t border-gray-200"></div>
                         <span
                             class="text-gray-600
@@ -61,7 +63,7 @@
                             font-thin uppercase transition-colors duration-200
                             {{ Request::is('*profile*')
                                 ? 'bg-gradient-to-r from-white to-blue-100
-                                                                                                                                                                                                                                                                                                                                                    dark:from-gray-700 dark:to-gray-800 text-blue-500 border-r-4 border-blue-500'
+                                                                                                                                                                                                                                                                                                                                                                                dark:from-gray-700 dark:to-gray-800 text-blue-500 border-r-4 border-blue-500'
                                 : 'dark:text-gray-200 hover:text-blue-500 text-gray-500' }} sm:hidden">
                             <span class="text-left">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
@@ -82,7 +84,7 @@
                             font-thin uppercase transition-colors duration-200
                             {{ Request::is('profile*')
                                 ? 'bg-gradient-to-r from-white to-blue-100
-                                                                                                                                                                                                                                                                                                                                                                                                        dark:from-gray-700 dark:to-gray-800 text-blue-500 border-r-4 border-blue-500'
+                                                                                                                                                                                                                                                                                                                                                                                                                                    dark:from-gray-700 dark:to-gray-800 text-blue-500 border-r-4 border-blue-500'
                                 : 'dark:text-gray-200 hover:text-blue-500 text-gray-500' }}
                             sm:hidden">
                                 <span class="text-left">

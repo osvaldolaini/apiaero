@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\V1;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -30,6 +31,8 @@ class AircraftsResource extends JsonResource
             'owner'=>$this->owner,
             'operator'=>$this->operator,
             'weight'=>$this->weight,
+            'updated_at'=> Carbon::createFromFormat('Y-m-d H:i:s', $this->updated_at)
+            ->format('d/m/Y'),
         ];
     }
 }

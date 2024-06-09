@@ -5,11 +5,11 @@ use App\Http\Controllers\Api\V1\AirfieldsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+// Route::middleware('ensureTokenIsValid')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
 
-Route::prefix('v1')->group(function(){
+Route::middleware('ensureTokenIsValid')->prefix('v1')->group(function(){
     Route::get('/aeroportos', [AirfieldsController::class, 'index'])
     ->name('airfields');
     Route::get('/aeroportos/{codigoOaci}', [AirfieldsController::class, 'show'])
