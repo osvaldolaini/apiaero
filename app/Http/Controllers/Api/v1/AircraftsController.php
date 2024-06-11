@@ -60,7 +60,7 @@ class AircraftsController extends Controller
             ], 400);
         }
         // Buscar o aeródromo
-        $airfield = Aircrafts::where('prefix',$prefix)->get();
+        $airfield = AircraftsResource::collection(Aircrafts::where('marca',$prefix)->get());
 
         if ($airfield->count() > 0) {
             $token = $request->bearerToken();

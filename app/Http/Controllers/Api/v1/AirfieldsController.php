@@ -61,7 +61,7 @@ class AirfieldsController extends Controller
             ], 400);
         }
         // Buscar o aeródromo
-        $airfield = Airfields::where('codigoOaci',$codigoOaci)->first();
+        $airfield = AirfieldsResource::collection(Airfields::where('codigoOaci',$codigoOaci)->get());
 
         if ($airfield->count() > 0) {
             $token = $request->bearerToken();

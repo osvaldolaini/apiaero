@@ -39,7 +39,7 @@
                                 </svg>
                             </span>
                             <span class="mx-4 text-sm font-normal">
-                                Aeródromos
+                                Aeroportos
                             </span>
                         </x-link-simple>
                         <x-link-simple url="aircrafts" active="*aeronaves*">

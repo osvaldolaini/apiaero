@@ -13,13 +13,16 @@ class Aircrafts extends Model
     use HasFactory;
     use LogsActivity;
     protected $fillable = [
-        'slug', 'active', 'group', 'type', 'manufacturer', 'prefix', 'code_icao', 'tug',
-        'widescreen', 'simulator', 'seat', 'crew', 'serial', 'since', 'owner', 'operator',
-        'weight'
+        'marca','proprietario','outros_proprietarios','sg_uf','cpf_cnpj','nm_operador',
+        'outros_operadores','uf_operador','cpf_cgc','nr_cert_matricula','nr_serie','cd_categoria',
+        'cd_tipo','ds_modelo','nm_fabricante','cd_cls','nr_pmd','cd_tipo_icao','nr_tripulacao_min',
+        'nr_passageiros_max','nr_assentos','nr_ano_fabricacao','dt_validade_cva','dt_validade_ca',
+        'dt_canc','ds_motivo_canc','cd_interdicao','cd_marca_nac1','cd_marca_nac2','cd_marca_nac3',
+        'cd_marca_estrangeira','ds_gravame','dt_matricula'
     ];
     public function getRouteKeyName(): string
     {
-        return 'prefix';
+        return 'marca';
     }
     public function getActivitylogOptions(): LogOptions
     {

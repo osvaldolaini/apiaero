@@ -14,8 +14,8 @@ class TableUsers extends Migration
     {
         Schema::table('users', function($table)
         {
-            $table->string('group',50)->nullable()->after('id');
-            $table->string('token',50)->nullable()->after('group');
+            $table->string('group',10)->nullable()->after('id');
+            $table->string('token',255)->nullable()->after('group');
         });
     }
 

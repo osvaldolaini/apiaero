@@ -3,7 +3,7 @@
         <div class="container mx-auto">
             <div class="flex flex-col lg:flex-row items-center justify-between">
                 <h2 class="text-center text-3xl tracki font-bold">
-                    {{ mb_strtoupper($breadcrumb) }}
+                    {{ mb_strtoupper($breadcrumb) }} {{ ($airfields ? '( '.$airfields->count().' )' : '') }}
                 </h2>
                 <x-action-loading></x-action-loading>
                 @if ($user == 'admin')

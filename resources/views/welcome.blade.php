@@ -22,14 +22,14 @@
 </head>
 
 {{-- <body class="font-sans antialiased"> --}}
-    <body class="antialiased relative h-screen overflow-hidden bg-gray-400
+    <body class="antialiased relative h-screen bg-gray-400
     text-white bg-cover"
         style="background-image: url({{ url('storage/logos/error-background-20-white.png') }});">
-    <div class="min-h-screen  dark:bg-gray-900">
+    <div class="h-screen  dark:bg-gray-900">
         {{-- @livewire('navigation-menu') --}}
-
         <!-- Page Content -->
-        <main class="relative h-screen overflow-hidden  dark:bg-gray-800">
+        <main class="h-screen dark:bg-gray-800">
+            <div class="h-screen ">
             <header class="z-30 flex items-center w-full h-24 sm:h-24">
                 <div class="container flex items-center justify-between px-6 mx-auto">
                     <div class="text-3xl font-black text-gray-800 uppercase ">
@@ -38,10 +38,10 @@
                     <div class="flex items-center">
                         <nav
                             class="items-center hidden text-lg  uppercase font-sen  lg:flex">
-                            <a href="#" class="flex px-6 py-2">
+                            {{-- <a href="#" class="flex px-6 py-2">
                                 Sobre
-                            </a>
-                            <a href="#" class="flex px-6 py-2">
+                            </a> --}}
+                            <a href="#documentation" class="flex px-6 py-2">
                                 Documentação
                             </a>
                         </nav>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </header>
-            <div class="relative z-20 flex items-center overflow-hidden  dark:bg-gray-800">
+            <div class="z-20 flex items-center  dark:bg-gray-800">
                 <div class="container relative flex px-6 pt-10 pb-16 mx-auto">
                     <div class="relative z-20 flex flex-col sm:w-2/3 lg:w-2/5">
                         <span class="w-20 h-2 mb-12 bg-blue-800 ">
@@ -88,8 +88,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+                @livewire('page.documentation')
         </main>
     </div>
+
 
     @stack('modals')
 

@@ -10,12 +10,12 @@ use Livewire\Component;
 
 class Airfield extends Component
 {
-    public $breadcrumb = 'Aeródromos';
+    public $breadcrumb = 'Aeroportos';
     public $showModalView = false;
     public $detail;
     public function render()
     {
-        $token = config('app.api_key');
+        // $token = config('app.api_key');
         // $airfields = json_encode(Http::withToken($token)
         //     ->get(url('api/v1/aeroportos'))->json());
         $airfields = Airfields::orderBy('updated_at','asc')->get();
@@ -179,7 +179,7 @@ class Airfield extends Component
     {
         $this->showModalView = true;
         if (isset($codigoOaci)) {
-            $token = config('app.api_key');
+            // $token = config('app.api_key');
             // $airfields = json_encode(Http::withToken($token)
             //     ->get(url('api/v1/aeroportos/'.$codigoOaci))->json());
             // $airfields = json_decode($airfields);

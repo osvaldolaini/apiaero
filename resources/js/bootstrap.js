@@ -34,5 +34,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //Graficos
 import Chart from 'chart.js/auto';
 
-// window.Alpine = Alpine;
+window.Alpine = Alpine;
 window.Chart = Chart;
+
+import 'flowbite';
