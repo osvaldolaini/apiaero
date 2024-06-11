@@ -56,7 +56,7 @@ class AircraftsController extends Controller
         // Validação do código OACI
         if (mb_strlen($prefix, 'UTF-8') != 5) {
             return response()->json([
-                'message' => 'O código OACI deve ter 4 (quatro) dígitos'
+                'message' => 'O prefixo deve ter 5 (cinco) dígitos'
             ], 400);
         }
         // Buscar o aeródromo

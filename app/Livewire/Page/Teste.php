@@ -7,7 +7,7 @@ use Livewire\Component;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class Documentation extends Component
+class Teste extends Component
 {
     public $aircrafts;
     public $airfields;
@@ -16,19 +16,17 @@ class Documentation extends Component
     public $urlApiAirfield;
     public function mount()
     {
+        $this->token = config('app.api_key');
         $this->urlApiAircraft = url('api/v1/aeronaves/{prefix}');
         $this->urlApiAirfield = url('api/v1/aeroportos/{codigo_oaci}');
-        $this->token = config('app.api_key');
         $this->airfields = json_encode(Http::withToken($this->token)
             ->get(url('api/v1/aeroportos/sbpa'))->json());
         $this->aircrafts = json_encode(Http::withToken($this->token)
-            ->get(url('api/v1/aeronaves/ppgiv'))->json());
-        // dd($aircrafts);
+            ->get(url('api/v1/aeronaves/ppgiv'))->json(),true);
     }
     public function render()
     {
-
-        return view('livewire.page.documentation',
+        return view('livewire.page.teste',
             [
                 'airfields' => $this->airfields,
                 'aircrafts' => $this->aircrafts,
@@ -39,12 +37,12 @@ class Documentation extends Component
     {
         $this->aircrafts = json_encode(Http::withToken($this->token)
             ->get(url($this->urlApiAircraft))->json());
-
-        // dd($this->aircrafts);
     }
     public function selectApiAirfield()
     {
         $this->airfields = json_encode(Http::withToken($this->token)
             ->get(url($this->urlApiAirfield))->json());
     }
+
+
 }

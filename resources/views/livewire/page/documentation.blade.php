@@ -3,21 +3,16 @@
         class="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:pt-8 lg:flex-row
         lg:justify-between max-full">
         <div class="flex flex-col items-center justify-center p-6 lg:mt-0 ">
-            <div class="max-w-lg w-full p-4 rounded-lg shadow-md overflow-y-auto max-h-80">
+            <div class="max-w-lg w-full p-4 rounded-lg overflow-auto max-h-80">
                 <div class="mockup-code">
-                    <pre id="json-airfield" class="text-green-300"></pre>
+                    <pre class="text-green-300">
+                        <code wire:model="airfields">
+                            {{ json_encode(json_decode($airfields), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}
+                            {{-- {{ json_encode(json_decode($airfields), JSON_PRETTY_PRINT) }} --}}
+                        </code>
+                    </pre>
                 </div>
             </div>
-
-            <script>
-                // Parse a string JSON em um objeto
-                const jsonObject = JSON.parse(@json($airfields));
-                // Stringify o objeto JSON com espaçamento para formatação
-                const formattedJson = JSON.stringify(jsonObject, null, 2);
-                // Exibe o JSON formatado dentro do elemento <pre>
-                document.getElementById('json-airfield').textContent = formattedJson;
-            </script>
-
             <p class="w-full mb-0 text-lg text-start">RESPONSES</p>
             <div class="flex mx-2 items-center pt-1 flex-nowrap border-t border-gray-200"></div>
             <div tabindex="0"
@@ -110,8 +105,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         name
                                     </td>
@@ -122,8 +116,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         city
                                     </td>
@@ -134,8 +127,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cityServed
                                     </td>
@@ -146,8 +138,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         state
                                     </td>
@@ -158,8 +149,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         stateServed
                                     </td>
@@ -170,8 +160,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         altitude
                                     </td>
@@ -182,8 +171,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         latitude
                                     </td>
@@ -194,8 +182,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         longitude
                                     </td>
@@ -206,8 +193,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         latGeoPoint
                                     </td>
@@ -218,8 +204,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         lonGeoPoint
                                     </td>
@@ -230,8 +215,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         length
                                     </td>
@@ -242,8 +226,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         length2
                                     </td>
@@ -254,8 +237,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         width
                                     </td>
@@ -266,8 +248,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         width2
                                     </td>
@@ -278,8 +259,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         surface
                                     </td>
@@ -290,8 +270,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         surface2
                                     </td>
@@ -302,8 +281,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         designation
                                     </td>
@@ -314,8 +292,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         designation2
                                     </td>
@@ -326,8 +303,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         resistence
                                     </td>
@@ -338,8 +314,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         resistence2
                                     </td>
@@ -350,8 +325,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         operationDay
                                     </td>
@@ -362,8 +336,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         operationNight
                                     </td>
@@ -374,8 +347,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         ordinanceRegistration
                                     </td>
@@ -386,8 +358,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         ordinanceLink
                                     </td>
@@ -398,8 +369,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         registrationValidity
                                     </td>
@@ -446,7 +416,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="flex flex-col justify-start p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
             <h1 class="text-4xl font-bold leading-none mb-2">
@@ -454,14 +423,14 @@
             </h1>
             <div class="w-full ">
                 <div class="relative">
-                    <input id="npm-install-copy-button" type="text"
+                    <input id="npm-install-copy-button-1" type="text" wire:model="urlApiAirfield"
+                        wire:change='selectApiAirfield()'
                         class="col-span-6 border border-gray-300 text-white text-sm rounded-lg
                         focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-900
                         dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-                        dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        value="{{ url('api/v1/aeroportos/{codigo_oaci}') }}" disabled readonly>
-                    <button data-copy-to-clipboard-target="npm-install-copy-button"
-                        data-tooltip-target="tooltip-copy-npm-install-copy-button"
+                        dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <button data-copy-to-clipboard-target="npm-install-copy-button-1"
+                        data-tooltip-target="tooltip-copy-npm-install-copy-button-1"
                         class="absolute end-2 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400
                          hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 inline-flex items-center
                          justify-center">
@@ -480,7 +449,7 @@
                             </svg>
                         </span>
                     </button>
-                    <div id="tooltip-copy-npm-install-copy-button" role="tooltip"
+                    <div id="tooltip-copy-npm-install-copy-button-1" role="tooltip"
                         class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white
                         transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                         <span id="default-tooltip-message">Clique para copiar</span>
@@ -520,12 +489,12 @@
             </h1>
             <div class="w-full ">
                 <div class="relative">
-                    <input id="npm-install-copy-button" type="text"
+                    <input id="npm-install-copy-button" type="text" wire:model="urlApiAircraft"
+                        wire:change='selectApiAircraft()'
                         class="col-span-6 border border-gray-300 text-white text-sm rounded-lg
                         focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-900
                         dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-                        dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        value="{{ url('api/v1/aeroportos/{prefix}') }}" disabled readonly>
+                        dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <button data-copy-to-clipboard-target="npm-install-copy-button"
                         data-tooltip-target="tooltip-copy-npm-install-copy-button"
                         class="absolute end-2 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400
@@ -573,512 +542,19 @@
                     </blockquote>
                 </div>
             </div>
-
         </div>
-        <div class="flex flex-col items-center justify-center p-6 lg:mt-0 ">
-            <div class="max-w-lg w-full p-4 rounded-lg shadow-md overflow-y-auto max-h-80">
+        <div class="flex flex-col items-center j p-6 lg:mt-0 ">
+            <div class="max-w-lg w-full p-4 rounded-lg overflow-auto max-h-80">
                 <div class="mockup-code">
-                    <pre id="json-aircrafts" class="text-green-300"></pre>
+                    <pre id="json-aircrafts" class="text-green-300">
+                        <code wire:model="aircrafts">
+                            {{ json_encode(json_decode($aircrafts, true), JSON_PRETTY_PRINT) }}
+                        </code>
+                    </pre>
                 </div>
             </div>
-
-            <script>
-                // Parse a string JSON em um objeto
-                const aircrafts = JSON.parse(@json($aircrafts));
-                // Stringify o objeto JSON com espaçamento para formatação
-                const formattedJsonAircrafts = JSON.stringify(aircrafts, null, 2);
-                // Exibe o JSON formatado dentro do elemento <pre>
-                document.getElementById('json-aircrafts').textContent = formattedJsonAircrafts;
-            </script>
-
             <p class="w-full mb-0 text-lg text-start">RESPONSES</p>
             <div class="flex mx-2 items-center pt-1 flex-nowrap border-t border-gray-200"></div>
-            {{-- <div id="accordion-collapse" class="w-full" data-accordion="collapse">
-                <h2 id="accordion-collapse-heading-3" class="mb-2">
-                    <button type="button"
-                        class="flex items-start justify-between w-full p-5 font-medium
-                        rtl:text-right text-green-500 bg-green-100 border border-b-0 border-green-200
-                        rounded-xl focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800
-                        dark:border-green-700 dark:text-green-400 hover:bg-green-100
-                        dark:hover:bg-green-800 gap-3"
-                        data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
-                        aria-controls="accordion-collapse-body-3">
-                        200 Success
-                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M9 5 5 1 1 5" />
-                        </svg>
-                    </button>
-                </h2>
-                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
-                    <div
-                        class="p-1 h-60 border border-b-0 bg-green-100 text-green-500 border-gray-200 dark:border-gray-700
-                    dark:bg-gray-900">
-                        <div class="overflow-y-auto h-60">
-                            <table class="table table-zebra font-mono ">
-                                <!-- head -->
-                                <thead>
-                                    <tr>
-                                        <th colspan="3" class="text-black font-semibold">
-                                            RESPONSE SCHEMA:
-                                            application/json
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            marca
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            proprietario
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            outros_proprietarios
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            sg_uf
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cpf_cnpj
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            nm_operador
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            outros_operadores
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            uf_operador
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cpf_cgc
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2 stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            nr_cert_matricula
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            nr_serie
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_categoria
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_tipo
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            ds_modelo
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            nm_fabricante
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_cls
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            nr_pmd
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_tipo_icao
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            nr_tripulacao_min
-                                        </td>
-                                        <td class="font-mono px-4 py-2">integer</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            nr_passageiros_max
-                                        </td>
-                                        <td class="font-mono px-4 py-2">integer</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            nr_assentos
-                                        </td>
-                                        <td class="font-mono px-4 py-2">integer</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            nr_ano_fabricacao
-                                        </td>
-                                        <td class="font-mono px-4 py-2">integer</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            dt_validade_cva
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            dt_validade_ca
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            dt_canc
-                                        </td>
-                                        <td class="font-mono px-4 py-2">date</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            ds_motivo_canc
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_interdicao
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_marca_nac1
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_marca_nac2
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_marca_nac3
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            cd_marca_estrangeira
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            ds_gravame
-                                        </td>
-                                        <td class="font-mono px-4 py-2">string</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-mono flex px-4 py-2">
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            dt_matricula
-                                        </td>
-                                        <td class="font-mono px-4 py-2">date</td>
-                                    </tr>
-                                </tbody>
-
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <h2 id="accordion-collapse-heading-4" class="mt-2">
-                    <button type="button"
-                        class="flex items-start justify-between w-full p-5 font-medium
-                        rtl:text-right text-red-500 bg-red-100 border border-b-0 border-red-200
-                        rounded-xl focus:ring-4 focus:ring-red-200 dark:focus:ring-red-800
-                        dark:border-red-700 dark:text-red-400 hover:bg-red-100
-                        dark:hover:bg-red-800 gap-3"
-                        data-accordion-target="#accordion-collapse-body-4" aria-expanded="false"
-                        aria-controls="accordion-collapse-body-4">
-                        <span>404 Código OACI não encontrado na base de dados</span>
-                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M9 5 5 1 1 5" />
-                        </svg>
-                    </button>
-                </h2>
-                <div id="accordion-collapse-body-4" class="hidden" aria-labelledby="accordion-collapse-heading-4">
-                    <div class="p-5 border border-b-0 bg-red-100 text-red-500 border-gray-200 dark:border-gray-700">
-                        <div class="overflow-x-auto">
-                            <table class="table table-zebra">
-                                <!-- head -->
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th colspan="3" class="text-black font-semibold">RESPONSE SCHEMA:
-                                            application/json</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- row 1 -->
-                                    <tr>
-                                        <th>
-                                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                        </th>
-                                        <td class="font-mono">message</td>
-                                        <td class="font-mono">string</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-            </div> --}}
             <div tabindex="0"
                 class="collapse collapse-arrow border text-green-500 border-green-300
                bg-green-200 mt-2">
@@ -1104,8 +580,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         prefix
                                     </td>
@@ -1116,8 +591,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         proprietario
                                     </td>
@@ -1128,8 +602,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         outros_proprietarios
                                     </td>
@@ -1140,8 +613,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         sg_uf
                                     </td>
@@ -1152,8 +624,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cpf_cnpj
                                     </td>
@@ -1164,8 +635,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         nm_operador
                                     </td>
@@ -1176,8 +646,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         outros_operadores
                                     </td>
@@ -1188,8 +657,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         uf_operador
                                     </td>
@@ -1200,8 +668,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cpf_cgc
                                     </td>
@@ -1223,8 +690,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         nr_serie
                                     </td>
@@ -1235,8 +701,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_categoria
                                     </td>
@@ -1247,8 +712,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_tipo
                                     </td>
@@ -1259,8 +723,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         ds_modelo
                                     </td>
@@ -1271,8 +734,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         nm_fabricante
                                     </td>
@@ -1283,8 +745,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_cls
                                     </td>
@@ -1295,8 +756,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         nr_pmd
                                     </td>
@@ -1307,8 +767,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_tipo_icao
                                     </td>
@@ -1319,8 +778,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         nr_tripulacao_min
                                     </td>
@@ -1331,8 +789,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         nr_passageiros_max
                                     </td>
@@ -1343,8 +800,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         nr_assentos
                                     </td>
@@ -1355,8 +811,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         nr_ano_fabricacao
                                     </td>
@@ -1367,8 +822,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         dt_validade_cva
                                     </td>
@@ -1379,8 +833,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         dt_validade_ca
                                     </td>
@@ -1391,8 +844,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         dt_canc
                                     </td>
@@ -1403,8 +855,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         ds_motivo_canc
                                     </td>
@@ -1415,8 +866,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_interdicao
                                     </td>
@@ -1427,8 +877,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_marca_nac1
                                     </td>
@@ -1439,8 +888,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_marca_nac2
                                     </td>
@@ -1451,8 +899,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_marca_nac3
                                     </td>
@@ -1463,8 +910,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         cd_marca_estrangeira
                                     </td>
@@ -1475,8 +921,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         ds_gravame
                                     </td>
@@ -1487,8 +932,7 @@
                                         <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         dt_matricula
                                     </td>
@@ -1536,7 +980,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
