@@ -19,7 +19,19 @@
                                     Dashboard
                                 </span>
                             </x-link-simple>
-                            <Fieldset></Fieldset>
+                            <x-link-simple url="emails" active="*emails*" >
+                                <span class="text-left">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 2048 1792"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1070 1178l306-564h-654l-306 564h654zm722-282q0 182-71 348t-191 286-286 191-348 71-348-71-286-191-191-286-71-348 71-348 191-286 286-191 348-71 348 71 286 191 191 286 71 348z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="mx-4 text-sm font-normal">
+                                    Emails
+                                </span>
+                            </x-link-simple>
                         @endif
                         <div class="flex mx-2 items-center pt-1 flex-nowrap border-t border-gray-200"></div>
                         <span

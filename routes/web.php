@@ -3,6 +3,7 @@
 use App\Livewire\Admin\Aircraft;
 use App\Livewire\Admin\Airfield;
 use App\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\PageEmails;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,8 @@ Route::middleware([
     'registerLogging'
 ])->group(function () {
     Route::get('/dashboard',Dashboard::class)->name('dashboard');
+    Route::get('/emails-recebidos', PageEmails::class)
+        ->name('emails');
     // Route::get('/painel-de-controle-administrador',Dashboard::class)->name('dashboard');
 });
     Route::get('/listar-aerodromos',Airfield::class)->name('airfields');

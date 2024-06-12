@@ -1,4 +1,4 @@
-<div id="documentation" class="bg-gray-900 dark:text-gray-800 sm:px-0 lg:px-20 min-h-screen">
+<div id="documentation" class="bg-black dark:text-gray-800  min-h-screen">
     <div
         class="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:pt-8 lg:flex-row
         lg:justify-between max-full">
@@ -8,7 +8,6 @@
                     <pre class="text-green-300">
                         <code wire:model="airfields">
                             {{ json_encode(json_decode($airfields), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}
-                            {{-- {{ json_encode(json_decode($airfields), JSON_PRETTY_PRINT) }} --}}
                         </code>
                     </pre>
                 </div>
@@ -417,6 +416,7 @@
                 </div>
             </div>
         </div>
+
         <div class="flex flex-col justify-start p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
             <h1 class="text-4xl font-bold leading-none mb-2">
                 Busca por aeroportos
@@ -480,9 +480,12 @@
 
         </div>
     </div>
+    <div class="divider divider-neutral bg-black py-0 my-0 items-center">
+        <img src="{{ url('storage/logos/logo-apiaero.png') }}" class="w-10 mx-auto" />
+    </div>
     <div
         class="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:pt-8 lg:flex-row
-        lg:justify-between max-full border-t border-gray-200">
+        lg:justify-between max-full ">
         <div class="flex flex-col justify-start p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
             <h1 class="text-4xl font-bold leading-none mb-2">
                 Busca por aeronaves
@@ -548,7 +551,7 @@
                 <div class="mockup-code">
                     <pre id="json-aircrafts" class="text-green-300">
                         <code wire:model="aircrafts">
-                            {{ json_encode(json_decode($aircrafts, true), JSON_PRETTY_PRINT) }}
+                            {{ json_encode(json_decode($aircrafts), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}
                         </code>
                     </pre>
                 </div>

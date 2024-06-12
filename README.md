@@ -5,6 +5,12 @@
 </p>
 
 # API 
+## V1.1 12/06/2024
+Page 
+    Sobre
+    Contato / Sugestões
+Admin
+    -Contato / Sugestões
 ## V1 07/06/2024
 Page
     Documentação
