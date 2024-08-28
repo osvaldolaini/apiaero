@@ -17,7 +17,7 @@ class AirfieldsController extends Controller
     public function index(Request $request)
     {
         $token = $request->bearerToken();
-        $user = User::where('token',$token)->first();
+        $user = User::where('token', $token)->first();
 
         Access::create([
             'user_id'       => $user->id,
@@ -51,26 +51,26 @@ class AirfieldsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($codigoOaci, Request $request)
+    public function show($codigo_oaci, Request $request)
     {
 
         // Validação do código OACI
-        if (mb_strlen($codigoOaci, 'UTF-8') != 4) {
+        if (mb_strlen($codigo_oaci, 'UTF-8') != 4) {
             return response()->json([
                 'message' => 'O código OACI deve ter 4 (quatro) dígitos'
             ], 400);
         }
         // Buscar o aeródromo
-        $airfield = AirfieldsResource::collection(Airfields::where('codigoOaci',$codigoOaci)->get());
+        $airfield = AirfieldsResource::collection(Airfields::where('codigo_oaci', $codigo_oaci)->get());
 
         if ($airfield->count() > 0) {
             $token = $request->bearerToken();
-            $user = User::where('token',$token)->first();
+            $user = User::where('token', $token)->first();
             Access::create([
                 'user_id'       => $user->id,
                 'token'         => $token,
                 'api'           => 'airfields',
-                'item'          => $codigoOaci,
+                'item'          => $codigo_oaci,
             ]);
             return response()->json([
                 'message' => 'Sucesso',
