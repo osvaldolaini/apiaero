@@ -64,11 +64,11 @@ class AirfieldsController extends Controller
         $airfield = AirfieldsResource::collection(Airfields::where('codigoOaci', $codigoOaci)->get());
 
         if ($airfield->count() > 0) {
-            $token = $request->bearerToken();
-            $user = User::where('token', $token)->first();
+            // $token = $request->bearerToken();
+            // $user = User::where('token', $token)->first();
             Access::create([
-                'user_id'       => $user->id,
-                'token'         => $token,
+                // 'user_id'       => $user->id,
+                // 'token'         => $token,
                 'api'           => 'airfields',
                 'item'          => $codigoOaci,
             ]);
