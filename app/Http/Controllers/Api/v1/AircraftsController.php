@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\v1\AircraftsResource;
+use App\Http\Resources\V1\AircraftsResource;
 use App\Models\Admin\Access;
 use App\Models\Aircrafts;
 use App\Models\User;
