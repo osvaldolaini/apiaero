@@ -22,11 +22,13 @@ class Teste extends Component
         $this->airfields = json_encode(Http::withToken($this->token)
             ->get(url('api/v1/aeroportos/sbpa'))->json());
         $this->aircrafts = json_encode(Http::withToken($this->token)
-            ->get(url('api/v1/aeronaves/ppgiv'))->json(),true);
+            ->get(url('api/v1/aeronaves/ppgiv'))->json(), true);
+        dd($this->airfields);
     }
     public function render()
     {
-        return view('livewire.page.teste',
+        return view(
+            'livewire.page.teste',
             [
                 'airfields' => $this->airfields,
                 'aircrafts' => $this->aircrafts,
@@ -43,6 +45,4 @@ class Teste extends Component
         $this->airfields = json_encode(Http::withToken($this->token)
             ->get(url($this->urlApiAirfield))->json());
     }
-
-
 }

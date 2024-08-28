@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::prefix('v1')->group(function () {
+Route::middleware('ensureTokenIsValid')->prefix('v1')->group(function () {
     Route::get('/aeroportos', [AirfieldsController::class, 'index'])
         ->name('airfields');
     Route::get('/aeroportos/{codigoOaci}', [AirfieldsController::class, 'show'])
