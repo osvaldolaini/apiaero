@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\V1\AircraftsResource;
+use App\Http\Resources\v1\AircraftsResource;
 use App\Models\Admin\Access;
 use App\Models\Aircrafts;
 use App\Models\User;
@@ -17,7 +17,7 @@ class AircraftsController extends Controller
     public function index(Request $request,)
     {
         $token = $request->bearerToken();
-        $user = User::where('token',$token)->first();
+        $user = User::where('token', $token)->first();
 
         Access::create([
             'user_id'       => $user->id,
@@ -51,7 +51,7 @@ class AircraftsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($prefix,Request $request)
+    public function show($prefix, Request $request)
     {
         // Validação do código OACI
         if (mb_strlen($prefix, 'UTF-8') != 5) {
@@ -60,11 +60,11 @@ class AircraftsController extends Controller
             ], 400);
         }
         // Buscar o aeródromo
-        $airfield = AircraftsResource::collection(Aircrafts::where('marca',$prefix)->get());
+        $airfield = AircraftsResource::collection(Aircrafts::where('marca', $prefix)->get());
 
         if ($airfield->count() > 0) {
             $token = $request->bearerToken();
-            $user = User::where('token',$token)->first();
+            $user = User::where('token', $token)->first();
             Access::create([
                 'user_id'       => $user->id,
                 'token'         => $token,

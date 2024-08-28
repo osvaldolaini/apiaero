@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\V1\AirfieldsResource;
+use App\Http\Resources\v1\AirfieldsResource;
 use App\Models\Admin\Access;
 use App\Models\Airfields;
 use App\Models\User;
