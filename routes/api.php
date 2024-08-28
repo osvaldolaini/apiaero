@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\V1\AircraftsController;
-use App\Http\Controllers\Api\V1\AirfieldsController;
+use App\Http\Controllers\Api\v1\AircraftsController;
+use App\Http\Controllers\Api\v1\AirfieldsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
