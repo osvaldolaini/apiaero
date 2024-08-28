@@ -26,7 +26,6 @@ class Teste extends Component
     }
     public function render()
     {
-        dd($this->airfields);
         return view(
             'livewire.page.teste',
             [

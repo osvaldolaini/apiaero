@@ -23,12 +23,13 @@ class Documentation extends Component
             ->get(url('api/v1/aeroportos/sbpa'))->json());
         $this->aircrafts = json_encode(Http::withToken($this->token)
             ->get(url('api/v1/aeronaves/ppgiv'))->json());
-        // dd($aircrafts);
+        dd($this->airfields);
     }
     public function render()
     {
 
-        return view('livewire.page.documentation',
+        return view(
+            'livewire.page.documentation',
             [
                 'airfields' => $this->airfields,
                 'aircrafts' => $this->aircrafts,
