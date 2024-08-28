@@ -20,7 +20,7 @@ class Documentation extends Component
         $this->urlApiAirfield = url('api/v1/aeroportos/{codigo_oaci}');
         $this->token = config('app.api_key');
         $this->airfields = json_encode(Http::withToken($this->token)
-            ->get(url('api/v1/aeroportos/sbpa'))->json());
+            ->get(url('api/v1/aeroportos/SBPA'))->json());
         $this->aircrafts = json_encode(Http::withToken($this->token)
             ->get(url('api/v1/aeronaves/ppgiv'))->json());
         // dd($this->airfields);
@@ -47,5 +47,6 @@ class Documentation extends Component
     {
         $this->airfields = json_encode(Http::withToken($this->token)
             ->get(url($this->urlApiAirfield))->json());
+        dd($this->airfields);
     }
 }
