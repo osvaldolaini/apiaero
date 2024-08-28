@@ -9,14 +9,13 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::middleware('ensureTokenIsValid')->prefix('v1')->group(function(){
+Route::prefix('v1')->group(function () {
     Route::get('/aeroportos', [AirfieldsController::class, 'index'])
-    ->name('airfields');
+        ->name('airfields');
     Route::get('/aeroportos/{codigoOaci}', [AirfieldsController::class, 'show'])
-    ->name('airfield');
+        ->name('airfield');
     Route::get('/aeronaves', [AircraftsController::class, 'index'])
-    ->name('airfields');
+        ->name('airfields');
     Route::get('/aeronaves/{prefix}', [AircraftsController::class, 'show'])
-    ->name('airfield');
+        ->name('airfield');
 });
-

@@ -32,7 +32,7 @@ class CreateAircraftsTable extends Migration
             $table->string('ds_modelo')->nullable();
             $table->string('nm_fabricante')->nullable();
             $table->string('cd_cls')->nullable();
-            $table->string('nr_pmd',20)->nullable();
+            $table->string('nr_pmd', 20)->nullable();
             $table->string('cd_tipo_icao')->nullable();
             $table->integer('nr_tripulacao_min')->nullable();
             $table->integer('nr_passageiros_max')->nullable();
@@ -50,8 +50,8 @@ class CreateAircraftsTable extends Migration
             $table->string('ds_gravame')->nullable();
             $table->date('dt_matricula')->nullable();
             $table->timestamps();
-            $table->string('updated_by',50)->nullable();
-            $table->string('created_by',50)->nullable();
+            $table->string('updated_by', 50)->nullable();
+            $table->string('created_by', 50)->nullable();
         });
     }
 
