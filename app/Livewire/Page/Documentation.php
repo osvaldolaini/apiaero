@@ -47,6 +47,6 @@ class Documentation extends Component
     {
         $this->airfields = json_encode(Http::withToken($this->token)
             ->get(url($this->urlApiAirfield))->json());
-        dd($this->airfields, $this->urlApiAirfield);
+        // dd($this->airfields, $this->urlApiAirfield);
     }
 }
