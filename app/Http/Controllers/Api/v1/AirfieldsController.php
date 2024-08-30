@@ -73,7 +73,7 @@ class AirfieldsController extends Controller
                 'item'          => $codigoOaci,
             ]);
             if ($airfield->count() == 1) {
-                $airfield = $airfield[0];
+                $airfield = $airfield->first();
             }
             return response()->json([
                 'message' => 'Sucesso',
