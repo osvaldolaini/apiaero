@@ -72,7 +72,7 @@ class AircraftsController extends Controller
                 'item'          => $prefix,
             ]);
             if ($aircraft->count() == 1) {
-                $aircraft = $aircraft[0];
+                $aircraft = $aircraft->first();
             }
             return response()->json([
                 'message' => 'Sucesso',
@@ -82,7 +82,7 @@ class AircraftsController extends Controller
             ], 200);
         } else {
             return response()->json([
-                'message' => 'Ops, aeródromo não encontrado'
+                'message' => 'Ops, aeronave não encontrada'
             ], 404);
         }
     }
