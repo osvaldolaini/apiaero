@@ -60,9 +60,9 @@ class AircraftsController extends Controller
             ], 400);
         }
         // Buscar o aeródromo
-        $airfield = AircraftsResource::collection(Aircrafts::where('marca', $prefix)->get());
+        $aircraft = AircraftsResource::collection(Aircrafts::where('marca', $prefix)->get());
 
-        if ($airfield->count() > 0) {
+        if ($aircraft->count() > 0) {
             $token = $request->bearerToken();
             $user = User::where('token', $token)->first();
             Access::create([
@@ -71,11 +71,14 @@ class AircraftsController extends Controller
                 'api'           => 'aircrafts',
                 'item'          => $prefix,
             ]);
+            if ($aircraft->count() == 1) {
+                $aircraft = $aircraft[0];
+            }
             return response()->json([
                 'message' => 'Sucesso',
                 'lastUpdateData' => date("Y-m-d"),
                 'version' => env('APP_VERSION', 'V1'),
-                'data' => $airfield
+                'data' => $aircraft,
             ], 200);
         } else {
             return response()->json([

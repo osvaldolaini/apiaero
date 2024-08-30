@@ -23,7 +23,6 @@ class Documentation extends Component
             ->get(url('api/v1/aeroportos/SBPA'))->json());
         $this->aircrafts = json_encode(Http::withToken($this->token)
             ->get(url('api/v1/aeronaves/ppgiv'))->json());
-        // dd($this->airfields);
     }
     public function render()
     {

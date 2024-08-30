@@ -72,6 +72,9 @@ class AirfieldsController extends Controller
                 'api'           => 'airfields',
                 'item'          => $codigoOaci,
             ]);
+            if ($airfield->count() == 1) {
+                $airfield = $airfield[0];
+            }
             return response()->json([
                 'message' => 'Sucesso',
                 'lastUpdateData' => date("Y-m-d"),
