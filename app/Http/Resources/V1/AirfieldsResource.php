@@ -36,7 +36,7 @@ class AirfieldsResource extends JsonResource
             'surface'               => $this->surface,
             'surface2'              => $this->surface2,
             'designation'           => $this->designation,
-            'designation2'          => $this->resistence,
+            'designation2'          => $this->designation2,
             'resistence'            => $this->resistence,
             'resistence2'           => $this->resistence2,
             'operationDay'          => $this->operationDay,
@@ -44,7 +44,7 @@ class AirfieldsResource extends JsonResource
             'ordinanceRegistration' => $this->ordinanceRegistration,
             'ordinanceLink'         => $this->ordinanceLink,
             'registrationValidity'  => $this->registrationValidity,
-            'updated_at'            => ($this->updated_at ? Carbon::parse( $this->updated_at)->format('d/m/Y') : null),
+            'updated_at'            => ($this->updated_at ? Carbon::parse($this->updated_at)->format('d/m/Y') : null),
         ];
     }
 }
